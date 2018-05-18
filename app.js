@@ -97,6 +97,18 @@ function handler (req, res) {
                 res.writeHead(200,{'Content-Type': 'text/css'});
                 res.end(data);
             });
+    } else if( /\.(svg)$/.test(path) ) {
+        index = fs.readFile(__dirname+'/public'+path, 
+            function(error,data) {
+
+                if (error) {
+                    res.writeHead(500);
+                    return res.end("Error: unable to load " + path);
+                }
+
+                res.writeHead(200,{'Content-Type': 'image/svg+xml'});
+                res.end(data);
+            });
     } 
     else {
         res.writeHead(404);
