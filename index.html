@@ -1,32 +1,422 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale Prototype</title>
+   
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/flickity.min.css">
+    <link rel="stylesheet" href="css/app.css">
+   
+    <script src="js/vendor/jquery.js"></script>
+ <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Fira+Sans+Condensed|Fira+Sans:400,700" rel="stylesheet">
+    
+    <script src="js/flickity.pkgd.min.js"></script>
+     
+
+  </head>
+  <body>
+
+    <div class="screen" data-targhet="loading_pg" id="off">
+      
+    </div>
+
+    <div class="screen" data-targhet="weight"  id="loading_pg">
 
 
-<!DOCTYPE HTML>
 
-<html>
+      <h2 class="centred" >Toe-touch</h2>
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Your Website</title>
-	
-	<script type = "text/javascript" 
-         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-         
-         
-         
-         
-     </script>
-		
-</head>
+      <svg width="126" height="106" viewBox="0 0 126 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.61135 56.1906C13.7378 65.5404 31.3133 75.6566 21.9906 105.239C12.668 134.821 33.1473 136.814 33.1473 136.814C50.4171 139.879 56.6832 130.683 61.8794 103.093C67.3814 74.5837 65.0889 50.8259 63.7134 47.9137C62.3379 44.8482 63.8663 43.3154 68.1455 39.4835C72.4248 35.4983 70.1323 31.5132 68.604 29.6738C66.6172 27.528 62.1851 27.0682 60.3511 33.3525C58.67 39.6368 56.836 41.0163 54.5436 39.0237C52.2511 37.0311 56.2247 35.1918 59.4342 28.2944C62.6436 21.3969 58.2115 17.7183 56.9889 16.9519C55.7662 16.1856 50.57 14.8061 50.4171 23.2363C50.2643 31.8197 48.4303 32.8926 46.5964 32.1263C44.7624 31.3599 46.1379 26.455 48.4303 19.2511C50.7228 12.2004 47.0549 9.28814 45.0681 8.67504C43.2341 8.06193 38.6492 7.14228 38.6492 19.0978C38.6492 33.3525 35.8982 23.2363 36.968 17.7183C38.0379 12.2004 37.2737 4.07676 29.785 5.14969C21.9906 6.22262 25.8114 15.879 26.8812 21.2437C27.7982 26.6083 25.0473 30.5935 22.7548 28.4476C20.4623 26.1485 20.4623 15.879 20.4623 15.879C20.4623 15.879 23.9774 -4.35342 7.47172 0.857962C-9.33965 6.06935 7.47172 35.1918 7.47172 35.1918C6.40191 38.7171 5.48492 46.8408 9.61135 56.1906Z" transform="translate(-4.48999 29.3259) rotate(-45)" fill="black"/>
+      </svg>
 
-<body>
-<iframe style="display:none;" src="http://localhost:8000"></iframe>
-</body>
+        <div class="ring-container">
+          <div class="ringring"></div>
+          <div class="circle"></div>
+        </div>
+        <h4  class="centred bottom" id="loading" >Loading<span id="wait">.</span></h4>
 
 
-<script>
+        <script type="text/javascript">
+            window.dotsGoingUp = true;
+            var dots = window.setInterval( function() {
+            var wait = document.getElementById("wait");
+            if ( window.dotsGoingUp ) 
+                wait.innerHTML += ".";
+            else {
+                wait.innerHTML = "";
+                
+                window.dotsGoingUp = true;
+            }
+            if ( wait.innerHTML.length > 2 )
+                window.dotsGoingUp = false;
+    
+    
+    
+            }, 500);
+      </script>
 
-var weight = $("iframe").contents().find("body").text();
-console.log(weight);
-</script>
+    </div>
 
+
+
+    <div class="screen goto" data-targhet="profile_sel" id="weight">
+
+      <p class="weight_text" id="big_weight"><span class="wgt_val"></span><span class="unit">kg</span> </p>
+      <p class="centred bottom info">Tap the screen to save</p>
+      
+    </div>
+
+    <div class="screen" id="profile_sel">
+
+      <h4  class="centred screen_title">Select your profile</h4>
+      <div class="profile goto" data-targhet="profile_stats">
+        
+        <svg width="67" height="115" viewBox="0 0 67 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="18.778" cy="17.6596" rx="18.778" ry="17.6596" transform="translate(15.7393)" fill="black"/>
+          <rect width="65.7229" height="71.8997" rx="10" transform="translate(0.985352 42.8876)" fill="black"/>
+        </svg>
+        <p class="profile_id">2</p>
+
+      </div>
+      <div class="profile selected goto" data-targhet="profile_stats">
+        <svg width="83" height="115" viewBox="0 0 83 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="18.778" cy="17.6596" rx="18.778" ry="17.6596" transform="translate(22.8257)" fill="black"/>
+          <path d="M22.8188 6.69678C24.2225 2.68577 28.008 0 32.2575 0H61.6665C66.1253 0 70.0454 2.95194 71.2773 7.23717L86.197 59.1369C88.0344 65.5286 83.2368 71.8997 76.5862 71.8997H14.0944C7.20601 71.8997 2.3803 65.0982 4.65568 58.5965L22.8188 6.69678Z" transform="translate(-4 42.8876)" fill="black"/>
+        </svg>
+        <p class="profile_id">1</p>
+      </div>
+
+      <div class="profile out_profile_f goto" data-targhet="profile_stats" style="display: none;">
+        <svg width="83" height="115" viewBox="0 0 83 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="18.778" cy="17.6596" rx="18.778" ry="17.6596" transform="translate(22.8257)" fill="black"/>
+          <path d="M22.8188 6.69678C24.2225 2.68577 28.008 0 32.2575 0H61.6665C66.1253 0 70.0454 2.95194 71.2773 7.23717L86.197 59.1369C88.0344 65.5286 83.2368 71.8997 76.5862 71.8997H14.0944C7.20601 71.8997 2.3803 65.0982 4.65568 58.5965L22.8188 6.69678Z" transform="translate(-4 42.8876)" fill="black"/>
+        </svg>
+        <p class="profile_id">3</p>
+
+      </div>
+      <div class="profile out_profile_m goto" data-targhet="profile_stats" style="display: none;">
+        <svg width="67" height="115" viewBox="0 0 67 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="18.778" cy="17.6596" rx="18.778" ry="17.6596" transform="translate(15.7393)" fill="black"/>
+          <rect width="65.7229" height="71.8997" rx="10" transform="translate(0.985352 42.8876)" fill="black"/>
+        </svg>
+        <p class="profile_id">3</p>
+
+      </div>
+
+      <div class="profile goto" data-targhet="gender" >
+        <svg width="135" height="122" viewBox="0 0 135 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="18.778" cy="17.6596" rx="18.778" ry="17.6596" transform="translate(21.7393)" fill="black"/>
+        <rect width="65.7229" height="71.8997" rx="10" transform="translate(6.98535 42.8876)" fill="black"/>
+        <ellipse cx="18.778" cy="17.6596" rx="18.778" ry="17.6596" transform="translate(74.8257)" fill="black"/>
+        <path d="M22.8188 6.69679C24.2225 2.68577 28.008 0 32.2575 0H61.6665C66.1253 0 70.0454 2.95194 71.2773 7.23717L86.197 59.1369C88.0344 65.5285         83.2368 71.8997 76.5862 71.8997H14.0944C7.206 71.8997 2.3803 65.0982 4.65568 58.5965L22.8188 6.69679Z" transform="translate(48 42.8876)" fill="       black"/>
+        </svg>
+
+
+      <p class="profile_id add">New</p>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="screen" id="gender">
+
+      <h4  class="centred screen_title">Specify your gender</h4>
+      <div class="profile">
+        
+        <svg width="67" height="115" viewBox="0 0 67 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="18.778" cy="17.6596" rx="18.778" ry="17.6596" transform="translate(15.7393)" fill="black"/>
+          <rect width="65.7229" height="71.8997" rx="10" transform="translate(0.985352 42.8876)" fill="black"/>
+        </svg>
+        <p class="profile_id">M</p>
+
+      </div>
+      <div class="profile">
+        <svg width="83" height="115" viewBox="0 0 83 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="18.778" cy="17.6596" rx="18.778" ry="17.6596" transform="translate(22.8257)" fill="black"/>
+          <path d="M22.8188 6.69678C24.2225 2.68577 28.008 0 32.2575 0H61.6665C66.1253 0 70.0454 2.95194 71.2773 7.23717L86.197 59.1369C88.0344 65.5286 83.2368 71.8997 76.5862 71.8997H14.0944C7.20601 71.8997 2.3803 65.0982 4.65568 58.5965L22.8188 6.69678Z" transform="translate(-4 42.8876)" fill="black"/>
+        </svg>
+        <p class="profile_id">F</p>
+      </div>
+
+      <div class="bottom" style="width: 100%">
+        <hr>
+         <button class="bottom_btn goto" data-targhet="profile_sel">Cancel</button><button class="bottom_btn next disabled goto" data-targhet="age">Confirm</button>
+      </div>
+
+      <script type="text/javascript">
+          $("div#gender div.profile").click(function() {
+          $("div#gender div.profile").removeClass("selected");
+          $(this).addClass("selected");
+          if ($(this).find("p.profile_id").text()== "M") {
+            $(".out_profile_m").show();
+            $(".out_profile_f").hide();
+          }
+          else{
+            $(".out_profile_f").show();
+            $(".out_profile_m").hide();
+
+          }
+          $("div#gender button.bottom_btn.next").removeClass("disabled");
+          });
+      </script>
+
+      
+    </div>
+
+
+    <div class="screen" id="age">
+
+      <h4  class="centred screen_title">Specify your age</h4>
+      <p  class="age_disp"><span class="age_val">20</span></p>
+
+      <button class="left_btn">-</button>
+      <button class="right_btn" id="age_add">+</button>
+
+
+
+
+      <div class="bottom" style="width: 100%">
+        <hr>
+        <button class="bottom_btn goto" data-targhet="gender">Cancel</button><button class="bottom_btn next goto" data-targhet="height">Confirm</button>
+      </div>
+
+
+      <script type="text/javascript">
+
+
+          var age_number=20;
+          var age_isDown=0;
+          var age_delay=200;
+          var age_nextTime=0;
+          var age_tm = 0;
+          
+          requestAnimationFrame(ageWatcher);
+          
+          $("div#age button.left_btn,div#age button.right_btn").mousedown(function(e){ageHandleMouseDown(e);});
+          $("div#age button.left_btn,div#age button.right_btn").mouseup(function(e){ageHandleMouseUp(e);});
+          $("div#age button.left_btn,div#age button.right_btn").mouseout(function(e){ageHandleMouseUp(e);});
+          
+          
+          function ageHandleMouseDown(e){
+            // tell the browser we're handling this event
+            e.preventDefault();
+            e.stopPropagation();
+          
+            // Put your mousedown stuff here
+            age_isDown=(e.target.id=='age_add')?1:-1;
+            age_number+=age_isDown;
+            $("span.age_val").html(age_number);
+            age_nextTime=age_tm+age_delay;
+
+
+          }
+          
+          function ageHandleMouseUp(e){
+            // tell the browser we're handling this event
+            e.preventDefault();
+            e.stopPropagation();
+          
+            // Put your mouseup stuff here
+            age_isDown=0;
+          }
+          
+          function ageWatcher(time){
+            age_tm=time;
+            requestAnimationFrame(ageWatcher);
+            if(age_tm<age_nextTime){return;}
+            age_nextTime=age_tm+age_delay;
+            if(age_isDown!==0){
+              age_number+=age_isDown;
+             $("span.age_val").html(age_number);
+              
+            }
+          }
+
+      </script>
+
+      
+    </div>
+
+
+    <div class="screen" id="height">
+
+      <h4  class="centred screen_title">Specify your height</h4>
+      <p  class="height_disp"><span class="height_val">140</span><span class="unit">cm</span></p>
+
+      <button class="left_btn">-</button>
+      <button class="right_btn" id="height_add">+</button>
+
+
+
+
+      <div class="bottom" style="width: 100%">
+        <hr>
+        <button class="bottom_btn goto" data-targhet="age">Cancel</button><button class="bottom_btn next goto" data-targhet="profile_number">Confirm</button>
+      </div>
+
+      <script type="text/javascript">
+
+        
+          var number=140;
+          var isDown=0;
+          var delay=200;
+          var nextTime=0;
+          var tm=0;
+          
+          requestAnimationFrame(watcher);
+          
+          $("div#height button.left_btn,div#height button.right_btn").mousedown(function(e){handleMouseDown(e);});
+          $("div#height button.left_btn,div#height button.right_btn").mouseup(function(e){handleMouseUp(e);});
+          $("div#height button.left_btn,div#height button.right_btn").mouseout(function(e){handleMouseUp(e);});
+          
+          
+          function handleMouseDown(e){
+            // tell the browser we're handling this event
+            e.preventDefault();
+            e.stopPropagation();
+          
+            // Put your mousedown stuff here
+            isDown=(e.target.id=='height_add')?1:-1;
+            number+=isDown;
+            $("span.height_val").html(number);
+            nextTime=tm+delay;
+          }
+          
+          function handleMouseUp(e){
+            // tell the browser we're handling this event
+            e.preventDefault();
+            e.stopPropagation();
+          
+            // Put your mouseup stuff here
+            isDown=0;
+          }
+          
+          function watcher(time){
+            requestAnimationFrame(watcher);
+            tm=time
+            if(tm<nextTime){return;}
+            nextTime=tm+delay;
+            if(isDown!==0){
+              number+=isDown;
+             $("span.height_val").html(number);
+              
+            }
+          }
+
+      </script>
+
+      
+    </div>
+
+    <div class="screen goto" data-targhet="profile_stats_e" id="profile_number">
+
+      <h4  class="centred screen_title">Your user profile is:</h4>
+      <div class="profile out_profile_m" id="" style="display: none;">
+        
+        <svg width="67" height="115" viewBox="0 0 67 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="18.778" cy="17.6596" rx="18.778" ry="17.6596" transform="translate(15.7393)" fill="black"/>
+          <rect width="65.7229" height="71.8997" rx="10" transform="translate(0.985352 42.8876)" fill="black"/>
+        </svg>
+        <p class="profile_id">3</p>
+
+      </div>
+      <div class="profile out_profile_f" id="" style="display: none;">
+        <svg width="83" height="115" viewBox="0 0 83 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="18.778" cy="17.6596" rx="18.778" ry="17.6596" transform="translate(22.8257)" fill="black"/>
+          <path d="M22.8188 6.69678C24.2225 2.68577 28.008 0 32.2575 0H61.6665C66.1253 0 70.0454 2.95194 71.2773 7.23717L86.197 59.1369C88.0344 65.5286 83.2368 71.8997 76.5862 71.8997H14.0944C7.20601 71.8997 2.3803 65.0982 4.65568 58.5965L22.8188 6.69678Z" transform="translate(-4 42.8876)" fill="black"/>
+        </svg>
+        <p class="profile_id">3</p>
+      </div>
+
+      <p class="centred bottom info">Tap the screen to continue</p>
+
+    </div>
+
+    <div class="screen profile_stats" id="profile_stats">
+      <div class="carousel-cell">
+		<p class="weight_text" id="small_weight"><span class="wgt_val"></span><span class="unit">kg</span> </p>
+       <hr>
+       <div class="sub_data">
+		<div> <h4 class="title">Since last week</h4>
+			<h4 class="weight">-1.5<span class="unit">kg</span></h4>
+			<p class="center">(Stable)</p>
+		</div><div> <h4 class="title">Body Fat</h4>
+			<h4 class="weight">20<span class="unit">%</span></h4>
+			<p class="center">(Normal)</p>
+		</div>
+       </div>
+      </div>
+      <div class="carousel-cell">
+        <h4 class="centred screen_title">Weight Weekly progress</h4>
+       <img src="svg/ww.svg">
+      </div>
+      <div class="carousel-cell">
+        <h4 class="centred screen_title">Weight Montly progress</h4>
+        <img src="svg/wm.svg">
+      </div>
+      <div class="carousel-cell">
+        <h4 class="centred screen_title">Body-Fat Weekly progress</h4>
+        <img src="svg/fw.svg">
+      </div>
+      <div class="carousel-cell">
+        <h4 class="centred screen_title">Body-Fat Montly progress</h4>
+        <img src="svg/fm.svg">
+      </div>
+
+
+
+    </div>
+
+
+
+    <div class="screen profile_stats" id="profile_stats_e">
+      <div class="carousel-cell">
+    <p class="weight_text" id="small_weight"><span class="wgt_val"></span><span class="unit">kg</span> </p>
+       <hr>
+       <div class="sub_data">
+    <div> <h4 class="title">Since last week</h4>
+      <h4 class="weight">n.a.<span class="unit">kg</span></h4>
+
+    </div><div> <h4 class="title">Body Fat</h4>
+      <h4 class="weight">20<span class="unit">%</span></h4>
+      <p class="center">(Normal)</p>
+    </div>
+       </div>
+      </div>
+      <div class="carousel-cell">
+        <h4 class="centred screen_title">Weight Weekly progress</h4>
+       <img src="svg/ww_e.svg">
+      </div>
+      <div class="carousel-cell">
+        <h4 class="centred screen_title">Weight Montly progress</h4>
+        <img src="svg/wm_e.svg">
+      </div>
+      <div class="carousel-cell">
+        <h4 class="centred screen_title">Body-Fat Weekly progress</h4>
+        <img src="svg/fw_e.svg">
+      </div>
+      <div class="carousel-cell">
+        <h4 class="centred screen_title">Body-Fat Montly progress</h4>
+        <img src="svg/fm_e.svg">
+      </div>
+
+
+
+    </div>
+
+
+
+    
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/socket.io.js"></script>
+	<script src="js/client.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>

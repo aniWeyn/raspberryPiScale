@@ -15,7 +15,7 @@ var options = {
   mode: 'text',
   pythonPath: '/usr/bin/python',
   pythonOptions: ['-u'],
-  scriptPath: 'hx711py',
+  scriptPath: 'api/hx711py',
   args: []
 };
 
