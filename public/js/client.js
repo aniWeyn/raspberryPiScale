@@ -13,6 +13,9 @@ function goTo(targhet){
 	$(".screen").hide();
 	$("#"+targhet).show();
 
+	$('#profile_stats').flickity('resize');
+	$('#profile_stats_e').flickity('resize');
+
 };
 
 socket.on('example-pong', function (data) {
@@ -83,17 +86,17 @@ $(".goto").click(
 
 // gender
 
-        
+       
 
-
-$('#profile_stats').flickity({
+       $('#profile_stats').flickity({
   // options
   cellAlign: 'left',
   contain: true,
   wrapAround: true,
   pageDots: true,
   selectedAttraction:1,
-friction:1
+friction:1,
+lazyLoad: 3
 });
 
 
@@ -105,5 +108,10 @@ $('#profile_stats_e').flickity({
   wrapAround: true,
   pageDots: true,
   selectedAttraction:1,
-friction:1
+friction:1,
+lazyLoad: 3
 });
+
+
+
+$(".screen").not("#off").hide();

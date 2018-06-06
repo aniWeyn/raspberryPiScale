@@ -1,8 +1,9 @@
 body, *{
 cursor: none!important; }
 
-h1,h2,h3,h4,p
+h1,h2,h3,h4,p{
 		font-family: 'Fira Sans', sans-serif;
+
 		margin-bottom: 1rem;
 }
 
@@ -26,6 +27,7 @@ div.screen{
 	width: 480px;
 	height: 320px;
 	position: relative;
+
 /*	position: absolute;
 font-family: 'Fira Sans Condensed', sans-serif;
 font-family: 'Fira Mono', monospace;
@@ -350,6 +352,7 @@ div.sub_data h4.weight span.unit{
 }
 div.sub_data p.center{
     text-align: center;
-    font-size: 1.2rem;
-    margin-top: -10px;
+    font-size: 1.4rem;
+    margin-top: -19px;
+
 }

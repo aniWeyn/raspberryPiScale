@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="css/app.css">
    
     <script src="js/vendor/jquery.js"></script>
- <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Fira+Sans+Condensed|Fira+Sans:400,700" rel="stylesheet">
-    
+ <!-- <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Fira+Sans+Condensed|Fira+Sans:400,700" rel="stylesheet">
+     -->
     <script src="js/flickity.pkgd.min.js"></script>
      
 
   </head>
   <body>
 
-    <div class="screen" data-targhet="loading_pg" id="off">
+    <div class="screen" data-targhet="loading_pg" id="off" >
       
     </div>
 
@@ -65,7 +65,7 @@
 
     <div class="screen goto" data-targhet="profile_sel" id="weight">
 
-      <p class="weight_text" id="big_weight"><span class="wgt_val"></span><span class="unit">kg</span> </p>
+      <p class="weight_text" id="big_weight"><span class="wgt_val">100</span><span class="unit">kg</span> </p>
       <p class="centred bottom info">Tap the screen to save</p>
       
     </div>
@@ -340,7 +340,7 @@
 
     <div class="screen profile_stats" id="profile_stats">
       <div class="carousel-cell">
-		<p class="weight_text" id="small_weight"><span class="wgt_val"></span><span class="unit">kg</span> </p>
+		<p class="weight_text" id="small_weight"><span class="wgt_val">100</span><span class="unit">kg</span> </p>
        <hr>
        <div class="sub_data">
 		<div> <h4 class="title">Since last week</h4>
@@ -353,19 +353,19 @@
        </div>
       </div>
       <div class="carousel-cell">
-        <h4 class="centred screen_title">Weight Weekly progress</h4>
+        <h4 class="centred screen_title">Weight (kg) Weekly progress</h4>
        <img src="svg/ww.svg">
       </div>
       <div class="carousel-cell">
-        <h4 class="centred screen_title">Weight Montly progress</h4>
+        <h4 class="centred screen_title">Weight (kg) Monthly progress</h4>
         <img src="svg/wm.svg">
       </div>
       <div class="carousel-cell">
-        <h4 class="centred screen_title">Body-Fat Weekly progress</h4>
+        <h4 class="centred screen_title">Body-Fat % Weekly progress</h4>
         <img src="svg/fw.svg">
       </div>
       <div class="carousel-cell">
-        <h4 class="centred screen_title">Body-Fat Montly progress</h4>
+        <h4 class="centred screen_title">Body-Fat % Monthly progress</h4>
         <img src="svg/fm.svg">
       </div>
 
@@ -377,11 +377,12 @@
 
     <div class="screen profile_stats" id="profile_stats_e">
       <div class="carousel-cell">
-    <p class="weight_text" id="small_weight"><span class="wgt_val"></span><span class="unit">kg</span> </p>
+    <p class="weight_text" id="small_weight"><span class="wgt_val">100</span><span class="unit">kg</span> </p>
        <hr>
        <div class="sub_data">
     <div> <h4 class="title">Since last week</h4>
-      <h4 class="weight">n.a.<span class="unit">kg</span></h4>
+      <h4 class="weight">--&nbsp;<span class="unit">kg</span></h4>
+      <p class="center">(n.a.)</p>
 
     </div><div> <h4 class="title">Body Fat</h4>
       <h4 class="weight">20<span class="unit">%</span></h4>
@@ -390,19 +391,19 @@
        </div>
       </div>
       <div class="carousel-cell">
-        <h4 class="centred screen_title">Weight Weekly progress</h4>
+        <h4 class="centred screen_title">Weight (kg) Weekly progress</h4>
        <img src="svg/ww_e.svg">
       </div>
       <div class="carousel-cell">
-        <h4 class="centred screen_title">Weight Montly progress</h4>
+        <h4 class="centred screen_title">Weight (kg) Monthly progress</h4>
         <img src="svg/wm_e.svg">
       </div>
       <div class="carousel-cell">
-        <h4 class="centred screen_title">Body-Fat Weekly progress</h4>
+        <h4 class="centred screen_title">Body-Fat % Weekly progress</h4>
         <img src="svg/fw_e.svg">
       </div>
       <div class="carousel-cell">
-        <h4 class="centred screen_title">Body-Fat Montly progress</h4>
+        <h4 class="centred screen_title">Body-Fat % Monthly progress</h4>
         <img src="svg/fm_e.svg">
       </div>
 
